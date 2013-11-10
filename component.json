@@ -1,0 +1,17 @@
+{
+  "name": "unique-random",
+  "version": "0.0.0",
+  "description": "Generate random numbers that are consecutively unique",
+  "repo": "sindresorhus/unique-random",
+  "keywords": [
+    "unique",
+    "random",
+    "number",
+    "single",
+    "generate",
+    "non-repeating"
+  ],
+  "main": "unique-random.js",
+  "scripts": ["unique-random.js"],
+  "license": "MIT"
+}

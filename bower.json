@@ -1,0 +1,20 @@
+{
+	"name": "unique-random",
+	"version": "0.0.0",
+	"description": "Generate random numbers that are consecutively unique",
+	"main": "unique-random.js",
+	"keywords": [
+		"unique",
+		"random",
+		"number",
+		"single",
+		"generate",
+		"non-repeating"
+	],
+	"ignore": [
+		".*",
+		"test.js",
+		"component.json",
+		"package.json"
+	]
+}
