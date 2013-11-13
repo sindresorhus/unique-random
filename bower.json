@@ -1,11 +1,12 @@
 {
 	"name": "unique-random",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Generate random numbers that are consecutively unique",
 	"main": "unique-random.js",
 	"keywords": [
 		"unique",
 		"random",
+		"rand",
 		"number",
 		"single",
 		"generate",
