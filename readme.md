@@ -28,14 +28,28 @@ component install sindresorhus/unique-random
 ```
 
 
-## Example
+## Examples
 
-Using Node.js. Will generate a random number between 1 and 10.
+Generate a random number between 1 and 10.
+
+### Node.js
 
 ```js
-var uniqueRandom = require('unique-random')(1, 10);
-console.log(uniqueRandom(), uniqueRandom(), uniqueRandom());
-// 5 2 6
+var rand = require('unique-random')(1, 10);
+console.log(rand(), rand(), rand());
+//=> 5 2 6
+```
+
+### Bower
+
+```html
+<script src="bower_components/unique-random/unique-random.js"></script>
+```
+
+```js
+var rand = uniqueRandom(1, 10);
+console.log(rand(), rand(), rand());
+//=> 5 2 6
 ```
 
 
