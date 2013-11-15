@@ -16,6 +16,8 @@ describe('uniqueRandom', function () {
 			if (current === prev || current > 10 || current < 1) {
 				fail = true;
 			}
+
+			prev = current;
 		}
 
 		assert(!fail);
