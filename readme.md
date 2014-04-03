@@ -1,4 +1,4 @@
-# unique-random [![Build Status](https://secure.travis-ci.org/sindresorhus/unique-random.png?branch=master)](http://travis-ci.org/sindresorhus/unique-random)
+# unique-random [![Build Status](https://travis-ci.org/sindresorhus/unique-random.svg?branch=master)](https://travis-ci.org/sindresorhus/unique-random)
 
 > Generate random numbers that are consecutively unique.
 
@@ -9,26 +9,20 @@ Useful for eg. slideshows where you don't want to have the same slide twice in a
 
 Download [manually](https://github.com/sindresorhus/unique-random/releases) or with a package-manager.
 
-#### [npm](https://npmjs.org/package/unique-random)
-
-```
-npm install --save unique-random
+```bash
+$ npm install --save unique-random
 ```
 
-#### [Bower](http://bower.io)
-
-```
-bower install --save unique-random
+```bash
+$ bower install --save unique-random
 ```
 
-#### [Component](https://github.com/component/component)
-
-```
-component install sindresorhus/unique-random
+```bash
+$ component install sindresorhus/unique-random
 ```
 
 
-## Examples
+## Usage
 
 Generate a random number between 1 and 10.
 
@@ -62,4 +56,4 @@ Returns a function which when called will return a random number that's never th
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
