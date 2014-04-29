@@ -1,8 +1,8 @@
 {
   "name": "unique-random",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate random numbers that are consecutively unique",
-  "repo": "sindresorhus/unique-random",
+  "repository": "sindresorhus/unique-random",
   "keywords": [
     "unique",
     "random",

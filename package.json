@@ -1,6 +1,6 @@
 {
   "name": "unique-random",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate random numbers that are consecutively unique",
   "keywords": [
     "unique",
@@ -21,15 +21,12 @@
     "unique-random.js"
   ],
   "main": "unique-random",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/sindresorhus/unique-random.git"
-  },
+  "repository": "sindresorhus/unique-random",
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "*"
   },
   "engines": {
     "node": ">=0.8.0"
