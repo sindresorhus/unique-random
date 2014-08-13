@@ -18,9 +18,8 @@
     "url": "http://sindresorhus.com"
   },
   "files": [
-    "unique-random.js"
+    "index.js"
   ],
-  "main": "unique-random",
   "repository": "sindresorhus/unique-random",
   "scripts": {
     "test": "mocha"
@@ -29,6 +28,6 @@
     "mocha": "*"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   }
 }
