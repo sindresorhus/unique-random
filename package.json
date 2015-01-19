@@ -4,6 +4,7 @@
   "description": "Generate random numbers that are consecutively unique",
   "keywords": [
     "unique",
+    "uniq",
     "random",
     "rand",
     "number",
@@ -15,7 +16,7 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "files": [
     "index.js"
