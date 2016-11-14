@@ -39,6 +39,7 @@ Returns a function that when called will return a random number that's never the
 - [random-obj-key](https://github.com/sindresorhus/random-obj-key) - Get a random key from an object
 - [random-obj-prop](https://github.com/sindresorhus/random-obj-prop) - Get a random property from an object
 - [unique-random-at-depth](https://github.com/Aweary/unique-random-at-depth) - This module with an optional depth argument
+- [crypto-random-string](https://github.com/sindresorhus/crypto-random-string) - Generate a cryptographically strong random string
 
 
 ## License
