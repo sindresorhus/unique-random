@@ -1,22 +1,19 @@
-'use strict';
-var assert = require('assert');
-var uniqueRandom = require('./')(1, 10);
+import test from 'ava';
+import m from '.';
 
-it('should generate a random number from min to max without the same number in a row', function () {
-	var count = 1000;
-	var fail = false;
-	var current;
-	var prev;
+test(t => {
+	const uniqueRandom = m(1, 10);
+	let count = 1000;
+	let current;
+	let prev;
 
 	while (--count > 0) {
 		current = uniqueRandom();
 
 		if (current === prev || current > 10 || current < 1) {
-			fail = true;
+			t.fail();
 		}
 
 		prev = current;
 	}
-
-	assert(!fail);
 });

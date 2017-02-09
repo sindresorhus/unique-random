@@ -2,6 +2,22 @@
   "name": "unique-random",
   "version": "1.0.0",
   "description": "Generate random numbers that are consecutively unique",
+  "license": "MIT",
+  "repository": "sindresorhus/unique-random",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "unique",
     "uniq",
@@ -10,25 +26,11 @@
     "number",
     "single",
     "generate",
-    "non-repeating"
+    "non-repeating",
+    "consecutively"
   ],
-  "license": "MIT",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "files": [
-    "index.js"
-  ],
-  "repository": "sindresorhus/unique-random",
-  "scripts": {
-    "test": "mocha"
-  },
   "devDependencies": {
-    "mocha": "*"
-  },
-  "engines": {
-    "node": ">=0.10.0"
+    "ava": "*",
+    "xo": "*"
   }
 }
