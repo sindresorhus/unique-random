@@ -1,36 +1,36 @@
 {
-  "name": "unique-random",
-  "version": "1.0.0",
-  "description": "Generate random numbers that are consecutively unique",
-  "license": "MIT",
-  "repository": "sindresorhus/unique-random",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "unique",
-    "uniq",
-    "random",
-    "rand",
-    "number",
-    "single",
-    "generate",
-    "non-repeating",
-    "consecutively"
-  ],
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "unique-random",
+	"version": "1.0.0",
+	"description": "Generate random numbers that are consecutively unique",
+	"license": "MIT",
+	"repository": "sindresorhus/unique-random",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"unique",
+		"uniq",
+		"random",
+		"rand",
+		"number",
+		"single",
+		"generate",
+		"non-repeating",
+		"consecutively"
+	],
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

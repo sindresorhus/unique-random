@@ -8,7 +8,7 @@ Useful for things like slideshows where you don't want to have the same slide tw
 ## Install
 
 ```
-$ npm install --save unique-random
+$ npm install unique-random
 ```
 
 

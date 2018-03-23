@@ -1,7 +1,7 @@
 import test from 'ava';
 import m from '.';
 
-test(t => {
+test('main', t => {
 	const uniqueRandom = m(1, 10);
 	let count = 1000;
 	let current;
@@ -16,4 +16,6 @@ test(t => {
 
 		prev = current;
 	}
+
+	t.pass();
 });
