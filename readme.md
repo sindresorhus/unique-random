@@ -16,16 +16,16 @@ $ npm install unique-random
 
 ```js
 const uniqueRandom = require('unique-random');
-const rand = uniqueRandom(1, 10);
+const random = uniqueRandom(1, 10);
 
-console.log(rand(), rand(), rand());
+console.log(random(), random(), random());
 //=> 5 2 6
 ```
 
 
 ## API
 
-### uniqueRandom(min, max)
+### uniqueRandom(minimumValue, maximumValue)
 
 Returns a function that when called will return a random number that is never the same as the previous.
 
