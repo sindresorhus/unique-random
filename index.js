@@ -1,11 +1,12 @@
 'use strict';
-module.exports = (minimumValue, maximumValue) => {
-	let prev;
+
+module.exports = (minimum, maximum) => {
+	let previousValue;
 	return function random() {
-		const num = Math.floor(
-			(Math.random() * (maximumValue - minimumValue + 1)) + minimumValue
+		const number = Math.floor(
+			(Math.random() * (maximum - minimum + 1)) + minimum
 		);
-		prev = num === prev && minimumValue !== maximumValue ? random() : num;
-		return prev;
+		previousValue = number === previousValue && minimum !== maximum ? random() : number;
+		return previousValue;
 	};
 };

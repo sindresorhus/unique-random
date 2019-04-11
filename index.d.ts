@@ -13,8 +13,8 @@ console.log(random(), random(), random());
 ```
 */
 declare function uniqueRandom(
-	minimumValue: number,
-	maximumValue: number
+	minimum: number,
+	maximum: number
 ): () => number;
 
 export = uniqueRandom;

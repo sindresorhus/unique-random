@@ -25,7 +25,7 @@ console.log(random(), random(), random());
 
 ## API
 
-### uniqueRandom(minimumValue, maximumValue)
+### uniqueRandom(minimum, maximum)
 
 Returns a function that when called will return a random number that is never the same as the previous.
 
