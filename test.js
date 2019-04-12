@@ -1,20 +1,24 @@
 import test from 'ava';
-import m from '.';
+import uniqueRandom from '.';
 
 test('main', t => {
-	const uniqueRandom = m(1, 10);
+	const random = uniqueRandom(1, 10);
 	let count = 1000;
-	let current;
-	let prev;
+	let currentValue;
+	let previousValue;
 
 	while (--count > 0) {
-		current = uniqueRandom();
+		currentValue = random();
 
-		if (current === prev || current > 10 || current < 1) {
+		if (
+			currentValue === previousValue ||
+			currentValue > 10 ||
+			currentValue < 1
+		) {
 			t.fail();
 		}
 
-		prev = current;
+		previousValue = currentValue;
 	}
 
 	t.pass();
