@@ -16,6 +16,7 @@ $ npm install unique-random
 
 ```js
 const uniqueRandom = require('unique-random');
+
 const random = uniqueRandom(1, 10);
 
 console.log(random(), random(), random());
@@ -27,7 +28,7 @@ console.log(random(), random(), random());
 
 ### uniqueRandom(minimum, maximum)
 
-Returns a function that when called will return a random number that is never the same as the previous.
+Returns a function, that when called, will return a random number that is never the same as the previous.
 
 
 ## Related
