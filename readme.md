@@ -1,4 +1,4 @@
-# unique-random [![Build Status](https://travis-ci.org/sindresorhus/unique-random.svg?branch=master)](https://travis-ci.org/sindresorhus/unique-random)
+# unique-random
 
 > Generate random numbers that are consecutively unique
 
