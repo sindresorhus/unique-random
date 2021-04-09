@@ -5,7 +5,7 @@ Generate random numbers that are consecutively unique.
 
 @example
 ```
-import uniqueRandom = require('unique-random');
+import uniqueRandom from 'unique-random';
 
 const random = uniqueRandom(1, 10);
 
@@ -13,9 +13,4 @@ console.log(random(), random(), random());
 //=> 5 2 6
 ```
 */
-declare function uniqueRandom(
-	minimum: number,
-	maximum: number
-): () => number;
-
-export = uniqueRandom;
+export default function uniqueRandom(minimum: number, maximum: number): () => number;

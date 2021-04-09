@@ -1,5 +1,5 @@
 import test from 'ava';
-import uniqueRandom from '.';
+import uniqueRandom from './index.js';
 
 test('main', t => {
 	const random = uniqueRandom(1, 10);

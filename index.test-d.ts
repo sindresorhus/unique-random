@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import uniqueRandom = require('.');
+import uniqueRandom from './index.js';
 
 const random = uniqueRandom(1, 10);
 
