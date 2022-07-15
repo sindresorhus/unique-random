@@ -13,4 +13,4 @@ console.log(random(), random(), random());
 //=> 5 2 6
 ```
 */
-export default function uniqueRandom(minimum: number, maximum: number): () => number;
+export default function uniqueRandom(minimum: number, maximum: number, preventRepeat?: boolean): () => number;
