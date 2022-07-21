@@ -1,3 +1,7 @@
+interface Options {
+	noOverlap?: boolean;
+}
+
 /**
 Generate random numbers that are consecutively unique.
 
@@ -13,4 +17,4 @@ console.log(random(), random(), random());
 //=> 5 2 6
 ```
 */
-export default function uniqueRandom(minimum: number, maximum: number, preventRepeat?: boolean): () => number;
+export default function uniqueRandom(minimum: number, maximum: number, options?: Options): () => number;

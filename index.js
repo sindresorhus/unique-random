@@ -1,8 +1,6 @@
-function getMaxNumbers(minimum, maximum) {
-	return maximum - minimum + 1;
-}
+const getMaxNumbers = (minimum, maximum) => maximum - minimum + 1;
 
-export default function uniqueRandom(minimum, maximum, preventRepeat = false) {
+export default function uniqueRandom(minimum, maximum, options) {
 	const extracted = new Set();
 	let previousValue;
 
@@ -15,7 +13,7 @@ export default function uniqueRandom(minimum, maximum, preventRepeat = false) {
 			extracted.clear();
 		}
 
-		if (preventRepeat) {
+		if (options?.noOverlap) {
 			previousValue = ((extracted.has(number) || previousValue === number) && random()) || (extracted.add(number) && number);
 			return previousValue;
 		}
