@@ -23,9 +23,31 @@ console.log(random(), random(), random());
 
 ## API
 
-### uniqueRandom(minimum, maximum)
+### uniqueRandom(minimum, maximum, options?)
 
 Returns a function, that when called, will return a random number that is never the same as the previous.
+
+#### minimum
+
+Type: `number`\
+The minimum number that can be returned.
+
+#### maximum
+
+Type: `number`\
+The maximum number that can be returned.
+
+#### options
+
+Type: `object`
+
+##### noOverlap
+
+Type: `boolean`\
+Default: `false`\
+Prevent the same number from being returned twice in a row.
+
+> **Note:** After all numbers have been returned, the row will be reset.
 
 ## Related
 
