@@ -8,20 +8,16 @@ function filledArray(minimum, maximum) {
 }
 
 export default function uniqueRandom(minimum, maximum, options) {
-	const defaultArray = filledArray(minimum, maximum);
-	let toExtract = [...defaultArray];
-	let previousValue;
+	if (options?.noOverlap) {
+		const defaultArray = filledArray(minimum, maximum);
+		let toExtract = [...defaultArray];
+		let previousValue;
 
-	return function random() {
-		const number = Math.floor(
-			(Math.random() * (maximum - minimum + 1)) + minimum
-		);
+		return function random() {
+			if (toExtract.length === 0) {
+				toExtract = [...defaultArray];
+			}
 
-		if (toExtract.length === 0) {
-			toExtract = [...defaultArray];
-		}
-
-		if (options?.noOverlap) {
 			const value = toExtract[Math.floor(Math.random() * toExtract.length)];
 			if (previousValue === value) {
 				return random();
@@ -30,7 +26,15 @@ export default function uniqueRandom(minimum, maximum, options) {
 			toExtract = toExtract.filter(item => item !== value);
 			previousValue = value;
 			return value;
-		}
+		};
+	}
+
+	let previousValue;
+
+	return function random() {
+		const number = Math.floor(
+			(Math.random() * (maximum - minimum + 1)) + minimum
+		);
 
 		previousValue = number === previousValue && minimum !== maximum ? random() : number;
 
