@@ -1,7 +1,7 @@
 function filledArray(minimum, maximum) {
 	const array = [];
-	for (let i = minimum; i < maximum + 1; i++) {
-		array.push(i);
+	for (let index = minimum; index < maximum + 1; index++) {
+		array.push(index);
 	}
 
 	return array;

@@ -1,5 +1,10 @@
 interface Options {
-	noOverlap?: boolean;
+	/**
+	 * Prevent the same number from being returned twice in a row.
+	 * 
+	 * @default false
+	 */
+	readonly noOverlap?: boolean;
 }
 
 /**
