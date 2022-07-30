@@ -41,13 +41,14 @@ The maximum number that can be returned.
 
 Type: `object`
 
-##### noOverlap
+##### bag
 
 Type: `boolean`\
 Default: `false`\
-Prevent the same number from being returned twice in a row.
+Puts all numbers in a bag and extracts a random one.\
+The extracted number can't be the same as the previous.
 
-> **Note:** After all numbers have been returned, the row will be reset.
+> **Note:** If the bag is empty, it is reset back to the original numbers.
 
 ## Related
 
