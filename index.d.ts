@@ -1,9 +1,11 @@
 interface Options {
 	/**
-	 * Prevent the same number from being returned twice in a row.
+	 * Puts all numbers in a bag and extracts a random one.\
+	 * The extracted number can't be the same as the previous.\
+	 * If the bag is empty, it is reset back to the original numbers.
 	 * @default false
 	 */
-	readonly noOverlap?: boolean;
+	readonly bag?: boolean;
 }
 
 /**

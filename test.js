@@ -24,8 +24,8 @@ test('main', t => {
 	t.pass();
 });
 
-test('options: noOverlap', t => {
-	const random = uniqueRandom(1, 10, {noOverlap: true});
+test('options: bag', t => {
+	const random = uniqueRandom(1, 10, {bag: true});
 	const maxNumbers = 10;
 	let count = 1000;
 	let currentValue;

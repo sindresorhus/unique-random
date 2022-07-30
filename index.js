@@ -8,7 +8,11 @@ function filledArray(minimum, maximum) {
 }
 
 export default function uniqueRandom(minimum, maximum, options) {
-	if (options?.noOverlap) {
+	if (options === undefined) {
+		options = {};
+	}
+
+	if (options.bag) {
 		const defaultArray = filledArray(minimum, maximum);
 		let toExtract = [...defaultArray];
 		let previousValue;
