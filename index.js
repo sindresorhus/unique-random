@@ -7,10 +7,7 @@ function integersInRange(minimum, maximum) {
 	return array;
 }
 
-export default function uniqueRandom(minimum, maximum, options) {
-	if (options === undefined) {
-		options = {};
-	}
+export default function uniqueRandom(minimum, maximum, {bag} = {}) {
 
 	if (options.bag) {
 		const defaultArray = filledArray(minimum, maximum);
