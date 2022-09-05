@@ -25,7 +25,7 @@ test('main', t => {
 });
 
 test('options: bag', t => {
-	const random = uniqueRandom(1, 10, {bag: true});
+	const random = uniqueRandom(1, 10, {exhaustive: true});
 	const maxNumbers = 10;
 	let count = 1000;
 	let currentValue;
