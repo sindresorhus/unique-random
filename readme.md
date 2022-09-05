@@ -41,14 +41,11 @@ The maximum number that can be returned.
 
 Type: `object`
 
-##### bag
+##### exhaustive
 
 Type: `boolean`\
 Default: `false`\
-Puts all numbers in a bag and extracts a random one.\
-The extracted number can't be the same as the previous.
-
-> **Note:** If the bag is empty, it is reset back to the original numbers.
+Prevent extracted numbers regeneration before all possibilities are exhausted.
 
 ## Related
 

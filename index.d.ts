@@ -1,10 +1,19 @@
 export interface Options {
 	/**
-	 * Puts all numbers in a bag and extracts a random one.\
-	 * The extracted number can't be the same as the previous.\
-	 * If the bag is empty, it is reset back to the original numbers.
-	 * @default false
-	 */
+	Prevent extracted numbers regeneration before all possibilities are exhausted.
+
+	@default false
+
+	@example
+	```
+	import uniqueRandom from 'unique-random';
+
+	const random = uniqueRandom(1, 3, {exhaustive: true});
+
+	console.log(random(), random(), random(), "<exhausted>", random(), random(), random());
+	//=> 1 3 2 <exhausted> 3 1 2
+	```
+	*/
 	readonly exhaustive?: boolean;
 }
 
