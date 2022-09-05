@@ -1,4 +1,4 @@
-function filledArray(minimum, maximum) {
+function integersInRange(minimum, maximum) {
 	const array = [];
 	for (let index = minimum; index < maximum + 1; index++) {
 		array.push(index);
