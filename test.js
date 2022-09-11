@@ -24,7 +24,7 @@ test('main', t => {
 	t.pass();
 });
 
-test('options: bag', t => {
+test('options: exhaustive', t => {
 	const random = uniqueRandom(1, 10, {exhaustive: true});
 	const maxNumbers = 10;
 	let count = 1000;

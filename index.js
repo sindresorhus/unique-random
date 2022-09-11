@@ -8,13 +8,13 @@ function _exhaustive(minimum, maximum) {
 		return array;
 	}
 
-	const defaultArray = integersInRange(minimum, maximum);
-	let toExtract = [...defaultArray];
+	let restorer = [];
+	let toExtract = integersInRange(minimum, maximum);
 	let previousValue;
 
 	return function random() {
 		if (toExtract.length === 0) {
-			toExtract = [...defaultArray];
+			[toExtract, restorer] = [restorer, toExtract];
 		}
 
 		const value = toExtract[Math.floor(Math.random() * toExtract.length)];
@@ -24,6 +24,8 @@ function _exhaustive(minimum, maximum) {
 
 		toExtract = toExtract.filter(item => item !== value);
 		previousValue = value;
+
+		restorer.push(value);
 
 		return value;
 	};
