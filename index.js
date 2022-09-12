@@ -17,17 +17,16 @@ function _exhaustive(minimum, maximum) {
 			[toExtract, restorer] = [restorer, toExtract];
 		}
 
-		const value = toExtract[Math.floor(Math.random() * toExtract.length)];
-		if (previousValue === value) {
+		const picker = Math.floor(Math.random() * toExtract.length);
+		if (previousValue === toExtract[picker]) {
 			return random();
 		}
 
-		toExtract = toExtract.filter(item => item !== value);
-		previousValue = value;
+		previousValue = toExtract.splice(picker, 1)[0];
 
-		restorer.push(value);
+		restorer.push(previousValue);
 
-		return value;
+		return previousValue;
 	};
 }
 
