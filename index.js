@@ -17,7 +17,7 @@ function uniqueRandomExhaustive(minimum, maximum) {
 			[valuesToPick, pickedValues] = [pickedValues, valuesToPick];
 		}
 
-		const picker = Math.floor(Math.random() * valuesToPick.length);
+		const index = Math.floor(Math.random() * valuesToPick.length);
 		if (previousValue === valuesToPick[picker]) {
 			return random();
 		}
