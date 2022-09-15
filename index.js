@@ -7,7 +7,7 @@ function integersInRange(minimum, maximum) {
 	return array;
 }
 
-function _exhaustive(minimum, maximum) {
+function uniqueRandomExhaustive(minimum, maximum) {
 	let pickedValues = [];
 	let valuesToPick = integersInRange(minimum, maximum);
 	let previousValue;
@@ -32,7 +32,7 @@ function _exhaustive(minimum, maximum) {
 
 export default function uniqueRandom(minimum, maximum, {exhaustive} = {}) {
 	if (exhaustive) {
-		return _exhaustive(minimum, maximum);
+		return uniqueRandomExhaustive(minimum, maximum);
 	}
 
 	let previousValue;
