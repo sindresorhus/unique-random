@@ -22,7 +22,7 @@ function uniqueRandomExhaustive(minimum, maximum) {
 			return random();
 		}
 
-		previousValue = valuesToPick.splice(picker, 1)[0];
+		[previousValue] = valuesToPick.splice(picker, 1);
 
 		pickedValues.push(previousValue);
 
