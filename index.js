@@ -1,6 +1,6 @@
 function integersInRange(minimum, maximum) {
 	const array = [];
-	for (let index = minimum; index < maximum + 1; index++) {
+	for (let index = minimum; index <= maximum; index++) {
 		array.push(index);
 	}
 
