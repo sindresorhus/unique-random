@@ -18,11 +18,11 @@ function uniqueRandomExhaustive(minimum, maximum) {
 		}
 
 		const index = Math.floor(Math.random() * valuesToPick.length);
-		if (previousValue === valuesToPick[picker]) {
+		if (previousValue === valuesToPick[index]) {
 			return random();
 		}
 
-		[previousValue] = valuesToPick.splice(picker, 1);
+		[previousValue] = valuesToPick.splice(index, 1);
 
 		pickedValues.push(previousValue);
 
