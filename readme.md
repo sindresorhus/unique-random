@@ -29,12 +29,14 @@ Returns a function, that when called, will return a random number that is never 
 
 #### minimum
 
-Type: `number`\
+Type: `number`
+
 The minimum number that can be returned.
 
 #### maximum
 
-Type: `number`\
+Type: `number`
+
 The maximum number that can be returned.
 
 #### options
@@ -44,7 +46,8 @@ Type: `object`
 ##### exhaustive
 
 Type: `boolean`\
-Default: `false`\
+Default: `false`
+
 Prevent extracted numbers regeneration before all possibilities are exhausted.\
 After all numbers in the range are extracted, start again and pick from the same range randomly.
 

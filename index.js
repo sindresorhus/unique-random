@@ -1,30 +1,30 @@
-function _exhaustive(minimum, maximum) {
-	function integersInRange(minimum, maximum) {
-		const array = [];
-		for (let index = minimum; index < maximum + 1; index++) {
-			array.push(index);
-		}
-
-		return array;
+function integersInRange(minimum, maximum) {
+	const array = [];
+	for (let index = minimum; index < maximum + 1; index++) {
+		array.push(index);
 	}
 
-	let restorer = [];
-	let toExtract = integersInRange(minimum, maximum);
+	return array;
+}
+
+function _exhaustive(minimum, maximum) {
+	let pickedValues = [];
+	let valuesToPick = integersInRange(minimum, maximum);
 	let previousValue;
 
 	return function random() {
-		if (toExtract.length === 0) {
-			[toExtract, restorer] = [restorer, toExtract];
+		if (valuesToPick.length === 0) {
+			[valuesToPick, pickedValues] = [pickedValues, valuesToPick];
 		}
 
-		const picker = Math.floor(Math.random() * toExtract.length);
-		if (previousValue === toExtract[picker]) {
+		const picker = Math.floor(Math.random() * valuesToPick.length);
+		if (previousValue === valuesToPick[picker]) {
 			return random();
 		}
 
-		previousValue = toExtract.splice(picker, 1)[0];
+		previousValue = valuesToPick.splice(picker, 1)[0];
 
-		restorer.push(previousValue);
+		pickedValues.push(previousValue);
 
 		return previousValue;
 	};
