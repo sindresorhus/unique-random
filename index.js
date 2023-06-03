@@ -1,13 +1,17 @@
+function generateUniqueRandomNumber(min, max) {
+	const range = max - min + 1;
+	const shuffledArray = Array.from({ length: range }, (_, index) => index + min)
+		.sort(() => Math.random() - 0.5);
+
+	let currentIndex = 0;
+	return function () {
+		return shuffledArray[currentIndex++];
+	};
+}
+
 export default function uniqueRandom(minimum, maximum) {
-	let previousValue;
-
 	return function random() {
-		const number = Math.floor(
-			(Math.random() * (maximum - minimum + 1)) + minimum
-		);
-
-		previousValue = number === previousValue && minimum !== maximum ? random() : number;
-
-		return previousValue;
+		const number = generateUniqueRandomNumber(minimum, maximum);
+		return number;
 	};
 }
