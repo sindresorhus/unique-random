@@ -29,4 +29,4 @@ for (const number of random) {
 }
 ```
 */
-export default function uniqueRandom(minimum: number, maximum: number): () => number & {[Symbol.iterator](): Iterator<number>};
+export default function uniqueRandom(minimum: number, maximum: number): (() => number) & {[Symbol.iterator](): Iterator<number>};
