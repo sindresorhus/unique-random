@@ -25,7 +25,22 @@ console.log(random(), random(), random());
 
 ### uniqueRandom(minimum, maximum)
 
-Returns a function, that when called, will return a random number that is never the same as the previous.
+Returns a function, that when called, will return a random number that is never the same as the previous. The returned function is also an iterable which consumes from the same source as the function.
+
+```js
+import uniqueRandom from 'unique-random';
+
+const random = uniqueRandom(1, 10);
+
+for (const number of random) {
+	console.log(number);
+
+	// The unique numbers will be iterated over infinitely
+	if (stopCondition) {
+		break;
+	}
+}
+```
 
 ## Related
 

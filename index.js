@@ -9,7 +9,7 @@ export default function uniqueRandom(minimum, maximum) {
 		previousValue = number === previousValue && minimum !== maximum ? random() : number;
 
 		return previousValue;
-	};
+	}
 
 	random[Symbol.iterator] = function * () {
 		while (true) {
@@ -17,5 +17,5 @@ export default function uniqueRandom(minimum, maximum) {
 		}
 	};
 
-	return random
+	return random;
 }

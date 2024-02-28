@@ -5,3 +5,7 @@ const random = uniqueRandom(1, 10);
 
 expectType<() => number>(random);
 expectType<number>(random());
+
+for (const number of random) {
+	expectType<number>(number);
+}
