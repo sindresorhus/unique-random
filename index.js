@@ -3,10 +3,10 @@ export default function uniqueRandom(minimum, maximum) {
 
 	function random() {
 		const number = Math.floor(
-			(Math.random() * (maximum - minimum + 1)) + minimum
+			(Math.random() * (maximum - minimum + 1)) + minimum,
 		);
 
-		previousValue = number === previousValue && minimum !== maximum ? random() : number;
+		previousValue = (number === previousValue && minimum !== maximum) ? random() : number;
 
 		return previousValue;
 	}

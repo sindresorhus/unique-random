@@ -6,8 +6,8 @@ Useful for things like slideshows where you don't want to have the same slide tw
 
 ## Install
 
-```
-$ npm install unique-random
+```sh
+npm install unique-random
 ```
 
 ## Usage
@@ -25,7 +25,9 @@ console.log(random(), random(), random());
 
 ### uniqueRandom(minimum, maximum)
 
-Returns a function, that when called, will return a random number that is never the same as the previous. The returned function is also an iterable which consumes from the same source as the function.
+Returns a function, that when called, will return a random number that is never the same as the previous.
+
+The returned function is also an iterable which consumes from the same source as the function:
 
 ```js
 import uniqueRandom from 'unique-random';
