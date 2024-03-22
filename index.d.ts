@@ -1,13 +1,13 @@
 /**
 Generate random numbers that are consecutively unique.
 
-@returns Returns a function, that when called, will return a random number that is never the same as the previous.
+@returns A function, that when called, will return a random number that is never the same as the previous.
 
 @example
 ```
-import uniqueRandom from 'unique-random';
+import {consecutiveUniqueRandom} from 'unique-random';
 
-const random = uniqueRandom(1, 10);
+const random = consecutiveUniqueRandom(1, 10);
 
 console.log(random(), random(), random());
 //=> 5 2 6
@@ -17,9 +17,9 @@ The returned function is also an iterable which consumes from the same source as
 
 @example
 ```
-import uniqueRandom from 'unique-random';
+import {consecutiveUniqueRandom} from 'unique-random';
 
-const random = uniqueRandom(1, 10);
+const random = consecutiveUniqueRandom(1, 10);
 
 for (const number of random) {
 	console.log(number);
@@ -31,4 +31,39 @@ for (const number of random) {
 }
 ```
 */
-export default function uniqueRandom(minimum: number, maximum: number): (() => number) & {[Symbol.iterator](): Iterator<number>};
+export function consecutiveUniqueRandom(minimum: number, maximum: number): (() => number) & {[Symbol.iterator](): Iterator<number>};
+
+/**
+Generate random numbers that do not repeat until the entire range has appeared.
+
+@return A function, that when called, will return a random number that is never the same as any previously returned until the entire range of possible numbers has been returned.
+
+@example
+```
+import {exhaustiveUniqueRandom} from 'unique-random';
+
+const random = exhaustiveUniqueRandom(1, 10);
+
+console.log(random(), random(), random());
+//=> 5 2 6
+```
+
+The returned function is also an iterable which consumes from the same source as the function:
+
+@example
+```
+import {exhaustiveUniqueRandom} from 'unique-random';
+
+const random = exhaustiveUniqueRandom(1, 10);
+
+for (const number of random) {
+	console.log(number);
+
+	// The unique numbers will be iterated over infinitely
+	if (stopCondition) {
+		break;
+	}
+}
+```
+*/
+export function exhaustiveUniqueRandom(minimum: number, maximum: number): (() => number) & {[Symbol.iterator](): Iterator<number>};
