@@ -2,14 +2,12 @@ import test from 'ava';
 import assertInRange from './assert-in-range.js';
 import {consecutiveUniqueRandom, exhaustiveUniqueRandom} from './index.js';
 
-test('consecutiveUniqueRandom - main', t => {
-	const random = consecutiveUniqueRandom(1, 10);
-	let count = 1000;
-	let currentValue;
+function testConsecutiveUniqueness(t, uniqueRandom) {
+	const random = uniqueRandom(1, 10);
 	let previousValue;
 
-	while (--count > 0) {
-		currentValue = random();
+	for (let count = 0; count < 1000; count++) {
+		const currentValue = random();
 
 		assertInRange(t, currentValue, {start: 1, end: 10});
 		if (previousValue !== undefined) {
@@ -18,8 +16,10 @@ test('consecutiveUniqueRandom - main', t => {
 
 		previousValue = currentValue;
 	}
+}
 
-	t.pass();
+test('consecutiveUniqueRandom - main', t => {
+	testConsecutiveUniqueness(t, consecutiveUniqueRandom);
 });
 
 test('consecutiveUniqueRandom - iterator', t => {
@@ -38,7 +38,7 @@ test('consecutiveUniqueRandom - iterator', t => {
 	t.false(done);
 });
 
-test('main - exhaustiveUniqueRandom', t => {
+test('exhaustiveUniqueRandom - main', t => {
 	const random = exhaustiveUniqueRandom(1, 5);
 	const seenValuesCount = new Map(Array.from({length: 5}, (_, index) => [index + 1, 0]));
 
@@ -50,7 +50,11 @@ test('main - exhaustiveUniqueRandom', t => {
 	}
 });
 
-test('iterator - exhaustiveUniqueRandom', t => {
+test('exhaustiveUniqueRandom - consecutive uniqueness', t => {
+	testConsecutiveUniqueness(t, exhaustiveUniqueRandom);
+});
+
+test('exhaustiveUniqueRandom - iterator', t => {
 	t.plan(3); // In case the for-of loop doesn't run
 
 	const random = exhaustiveUniqueRandom(1, 10);

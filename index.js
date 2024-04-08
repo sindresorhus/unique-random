@@ -4,46 +4,78 @@ function * range(minimum, maximum) {
 	}
 }
 
-function assignIteratorShortcut(function_) {
-	function_[Symbol.iterator] = function * () {
+function randomInteger(minimum, maximum) {
+	return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+}
+
+function randomIntegerWithout(minimum, maximum, excludedValue) {
+	const number = randomInteger(minimum, maximum - 1);
+
+	return number >= excludedValue ? number + 1 : number;
+}
+
+function makeCallable(generator) {
+	const iterator = generator();
+
+	function random() {
+		return iterator.next().value;
+	}
+
+	random[Symbol.iterator] = function * () {
 		while (true) {
-			yield function_();
+			yield random();
 		}
 	};
 
-	return function_;
+	return random;
 }
 
 export function consecutiveUniqueRandom(minimum, maximum) {
-	let previousValue;
+	return makeCallable(function * () {
+		if (minimum === maximum) {
+			while (true) {
+				yield minimum;
+			}
+		}
 
-	function random() {
-		const number = Math.floor(
-			(Math.random() * (maximum - minimum + 1)) + minimum,
-		);
+		let previousValue = randomInteger(minimum, maximum);
+		yield previousValue;
 
-		previousValue = (number === previousValue && minimum !== maximum) ? random() : number;
-
-		return previousValue;
-	}
-
-	return assignIteratorShortcut(random);
+		while (true) {
+			previousValue = randomIntegerWithout(minimum, maximum, previousValue);
+			yield previousValue;
+		}
+	});
 }
 
 export function exhaustiveUniqueRandom(minimum, maximum) {
-	let unconsumedValues = [...range(minimum, maximum)];
-
-	function random() {
-		if (unconsumedValues.length === 0) {
-			unconsumedValues = [...range(minimum, maximum)];
+	return makeCallable(function * () {
+		if (minimum === maximum) {
+			while (true) {
+				yield minimum;
+			}
 		}
 
-		return unconsumedValues.splice(
-			// https://github.com/sindresorhus/random-item/blob/b832d9332044f2d4f223731dc97534efd258b441/index.js#L6C9-L6C57
-			Math.floor(Math.random() * unconsumedValues.length),
-			1,
-		)[0];
-	}
+		let unconsumedValues = [...range(minimum, maximum)];
 
-	return assignIteratorShortcut(random);
+		while (true) {
+			while (unconsumedValues.length > 1) {
+				yield unconsumedValues.splice(
+					randomInteger(0, unconsumedValues.length - 1),
+					1,
+				)[0];
+			}
+
+			const [previousValue] = unconsumedValues;
+
+			yield previousValue;
+
+			unconsumedValues = [...range(minimum, maximum)];
+
+			yield unconsumedValues.splice(
+				randomIntegerWithout(0, unconsumedValues.length - 1, previousValue - minimum),
+				1,
+			)[0];
+		}
+	});
 }
