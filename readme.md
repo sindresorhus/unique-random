@@ -13,9 +13,9 @@ npm install unique-random
 ## Usage
 
 ```js
-import uniqueRandom from 'unique-random';
+import {consecutiveUniqueRandom} from 'unique-random';
 
-const random = uniqueRandom(1, 10);
+const random = consecutiveUniqueRandom(1, 10);
 
 console.log(random(), random(), random());
 //=> 5 2 6
@@ -23,16 +23,22 @@ console.log(random(), random(), random());
 
 ## API
 
-### uniqueRandom(minimum, maximum)
+### consecutiveUniqueRandom(minimum, maximum)
 
-Returns a function, that when called, will return a random number that is never the same as the previous.
+Generate random numbers that are consecutively unique.
+
+### exhaustiveUniqueRandom(minimum, maximum)
+
+Generate random numbers that do not repeat until the entire range has appeared.
+
+Both `consecutiveUniqueRandom` and `exhaustiveUniqueRandom` return a function, that when called, will return the generated number.
 
 The returned function is also an iterable which consumes from the same source as the function:
 
 ```js
-import uniqueRandom from 'unique-random';
+import {exhaustiveUniqueRandom} from 'unique-random';
 
-const random = uniqueRandom(1, 10);
+const random = exhaustiveUniqueRandom(1, 10);
 
 for (const number of random) {
 	console.log(number);
