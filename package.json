@@ -1,6 +1,6 @@
 {
 	"name": "unique-random",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"description": "Generate random numbers that are consecutively unique",
 	"license": "MIT",
 	"repository": "sindresorhus/unique-random",
