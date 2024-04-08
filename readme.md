@@ -25,13 +25,15 @@ console.log(random(), random(), random());
 
 ### consecutiveUniqueRandom(minimum, maximum)
 
-Generate random numbers that are consecutively unique.
+Generate random numbers that are consecutively unique, meaning that each number in the sequence is distinct from the one immediately before it.
 
 ### exhaustiveUniqueRandom(minimum, maximum)
 
 Generate random numbers that do not repeat until the entire range has appeared.
 
-Both `consecutiveUniqueRandom` and `exhaustiveUniqueRandom` return a function, that when called, will return the generated number.
+### `consecutiveUniqueRandom` and `exhaustiveUniqueRandom`
+
+Returns a function, that when called, will return the generated number.
 
 The returned function is also an iterable which consumes from the same source as the function:
 
@@ -49,6 +51,9 @@ for (const number of random) {
 	}
 }
 ```
+
+> [!NOTE]
+> If `minimum` is equal to `maximum`, the same value will always be returned.
 
 ## Related
 

@@ -69,3 +69,54 @@ test('exhaustiveUniqueRandom - iterator', t => {
 	assertInRange(t, value, {start: 1, end: 10});
 	t.false(done);
 });
+
+test('consecutiveUniqueRandom - ensures maximum value can appear', t => {
+	const minimum = 1;
+	const maximum = 2; // Reduced range to increase the chance of seeing both values quickly.
+	const random = consecutiveUniqueRandom(minimum, maximum);
+	const seenValues = new Set();
+
+	for (let count = 0; count < 1000; count++) {
+		const value = random();
+		seenValues.add(value);
+		if (seenValues.size === (maximum - minimum + 1)) {
+			break;
+		} // Exit early if all possible values have been seen.
+	}
+
+	t.is(seenValues.size, maximum - minimum + 1, 'Should be able to produce all values in the range');
+});
+
+test('consecutiveUniqueRandom - edge case minimum equals maximum', t => {
+	const random = consecutiveUniqueRandom(5, 5);
+	for (let count = 0; count < 100; count++) {
+		t.is(random(), 5);
+	}
+});
+
+test('exhaustiveUniqueRandom - edge case minimum equals maximum', t => {
+	const random = exhaustiveUniqueRandom(5, 5);
+	for (let count = 0; count < 100; count++) {
+		t.is(random(), 5);
+	}
+});
+
+test('exhaustiveUniqueRandom - resets after full cycle', t => {
+	const rangeSize = 5;
+	const random = exhaustiveUniqueRandom(1, rangeSize);
+	const seenValues = new Set();
+
+	for (let count = 0; count < rangeSize * 2; count++) {
+		const value = random();
+		assertInRange(t, value, {start: 1, end: rangeSize});
+
+		if (seenValues.has(value)) {
+			// We expect a reset to happen here, clearing the seen values
+			seenValues.clear();
+		}
+
+		seenValues.add(value);
+	}
+
+	t.is(seenValues.size, rangeSize, 'Generator did not properly reset after exhausting unique values.');
+});

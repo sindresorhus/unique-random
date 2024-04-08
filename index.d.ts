@@ -1,5 +1,5 @@
 /**
-Generate random numbers that are consecutively unique.
+Generate random numbers that are consecutively unique, meaning that each number in the sequence is distinct from the one immediately before it.
 
 @returns A function, that when called, will return a random number that is never the same as the previous.
 
@@ -30,13 +30,15 @@ for (const number of random) {
 	}
 }
 ```
+
+Note: If `minimum` is equal to `maximum`, the same value will always be returned.
 */
 export function consecutiveUniqueRandom(minimum: number, maximum: number): (() => number) & {[Symbol.iterator](): Iterator<number>};
 
 /**
 Generate random numbers that do not repeat until the entire range has appeared.
 
-@return A function, that when called, will return a random number that is never the same as any previously returned until the entire range of possible numbers has been returned.
+@returns A function, that when called, will return a random number that is never the same as any previously returned until the entire range of possible numbers has been returned.
 
 @example
 ```
@@ -65,5 +67,7 @@ for (const number of random) {
 	}
 }
 ```
+
+Note: If `minimum` is equal to `maximum`, the same value will always be returned.
 */
 export function exhaustiveUniqueRandom(minimum: number, maximum: number): (() => number) & {[Symbol.iterator](): Iterator<number>};
